@@ -11,7 +11,7 @@ def example_files(tmp_path_factory: pytest.TempPathFactory):
     with open(tmp_path / "a", "w") as f:
         f.write("hello")
     # modification times of b, c, and d need to be later than a
-    sleep(0.01)
+    sleep(0.02)
     with open(tmp_path / "b", "w") as f:
         f.write("hello")
     with open(tmp_path / "c", "w") as f:
