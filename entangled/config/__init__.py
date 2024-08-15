@@ -84,6 +84,7 @@ class Config(threading.local):
     markers: Markers = field(default_factory=lambda: copy(markers))
     watch_list: list[str] = field(default_factory=lambda: ["**/*.md"])
     ignore_list: list[str] = field(default_factory=lambda: ["README.md"])
+    ignore_tags_list: list[str] = field(default_factory=list)
     annotation_format: Optional[str] = None
     annotation: AnnotationMethod = AnnotationMethod.STANDARD
     use_line_directives: bool = False
