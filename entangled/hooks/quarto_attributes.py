@@ -33,6 +33,11 @@ class Hook(HookBase):
 
         attrs = yaml.safe_load(header)
         if attrs is None:
+            log.debug(f"No attribute on {code.origin}")
+            return
+
+        if not isinstance(attrs, dict):
+            log.warning(f"Malformed attributes on {code.origin}.")
             return
 
         if "id" in attrs:
